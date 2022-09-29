@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+ const colors = [
+  { 'red': '#f00' },
+  { 'green': '#0f0' },
+  { 'blue': '#00f' }
+];
+
+$.each(colors, function() {
+  $.each(this, function(name, value) {
+    console.log(`${name} = ${value}`);
+  });
+});
+
+ const obj = {
+  one: 1,
+  two: 2,
+  three: 3,
+  four: 4,
+  five: 5
+};
+
+$.each(obj, function(key, value) {
+  console.log(key);
+});
+
+$('a').each(function(index, value){
+  const link = this.href;
+
+  if (link.match(/https?:\/\//)) {
+    console.log(link);
+  }
+})
+
+
+
+$('#5demo').on('click', function(e) {
+  $('li').each(function(index,value) {
+  alert(JSON.stringify($(this)));
+    $(this).css('background-color', 'orange')
+           .delay(index * 200)
+           .fadeOut(1500);
+  });
+
+  e.preventDefault();
+});
+
+
+
+
+$("#5demo").find("li.liFind").css({"color":"green"});
+
+//$( "p#class" ).css( "color", "#0769ad" );
+
+$("<style>p#class {color:green}</style>").appendTo("head");
+
+
+
+
+});
+</script>
+</head>
+<body>
+
+<p>If you click on me, I will disappear.</p>
+<p>Click me away!</p>
+<p>Click me too!</p>
+<a href="www.sitepoint.com/" id="abcd">SitePoint</a>
+<a href="https://developer.mozilla.org" id="abcd1">MDN web docs</a>
+<a href="http://example.com/" id="abcd2">Example Domain</a>
+
+
+<ul id="5demo"> 
+  <li>One</li>
+  <li>Two</li>
+  <li>Three</li>
+  <li class="liFind">Four</li>
+  <li>Five</li>
+</ul>
+<div>
+<p id="class">If you click on me, I will disappear.</p>
+<p id="class">If you click on me, I will disappear.</p>
+<p id="class">If you click on me, I will disappear.</p>
+<p id="class">If you click on me, I will disappear.</p>
+<p id="class">If you click on me, I will disappear.</p>
+<p id="class">If you click on me, I will disappear.</p>
+<p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p>
+<p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p><p id="class">If you click on me, I will disappear.</p>
+
+</div>
+
+</body>
+</html>

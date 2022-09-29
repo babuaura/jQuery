@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS Events</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style>  
+.intro {  
+     font-size: 50px;  
+    color: red;  
+}
+.highlight {  
+    background: pink;  
+  }
+  span{
+  display : none
+  }
+</style>
+<script>
+$(()=>{
+alert( $( "input" ).length );
+  $("#cars").click(()=>{
+  //alert($(this).val());
+  $("#bikes").val(null);
+     $("#name").val(null);
+  $("#show").empty();
+  $("#check").prop("checked",false);
+  });
+ 
+  $("#bikes").change(()=>{
+  $("#cars").val(null);
+  $("#name").val(null);
+  $("#favPlaces").val(null);
+  $("#show").remove();
+  $("#check").prop("checked",false);
+  });
+
+   $("#name").on('input',function(){
+   $( this ).css( "display", "inline" ).fadeOut( 2000 );
+  $("#show").html($(this).val()).css({"background-color": "yellow", "font-size": "200%"}).clone().appendTo("h3");
+    $("#cars").val(null);
+  $("#favPlaces").val(null);
+  $("#bikes").val(null);
+  $("#check").removeAttr("checked");;
+  });
+ 
+  $("#btn1").click(()=>{
+  $(this).html(($(this).html())*1+1);
+  });
+ 
+  $("#btn2").click(()=>{
+  $(this).html(($(this).html())*1+1);
+    $("#btn1").trigger('click');
+  });
+ 
+   $("#btn3").click(()=>{
+   $("#show").addClass("intro");
+  });
+ 
+ 
+   $(".p2").dblclick(function(){
+   $( this ).toggleClass( "highlight" );  
+  });
+  
+    $("#button7").click(function(){
+    //alert("click");
+    $(".p2").off("dblclick");
+  });
+ //  $("#button8").click(function(){
+    ///alert("click");
+   // $(".p2").on("dblclick");
+ // });
+ 
+   $("#btn4").click(()=>{
+   $("#show").hide();
+  });
+  $( "input" ).focus(()=> {
+  $( this ).next( "span" ).css( "display", "inline" ).fadeOut( 2000 );
+});
+
+$( "form" ).submit(( event )=> {  
+  if ( $( "#name3" ).val() === "aura" ) {  
+    $( ".example" ).text( "Submitted Successfully." ).show().fadeOut( 2000 );  
+    return;  
+  }  
+  $( ".example" ).text( "Not valid!" ).show().fadeOut( 2000 );  
+  event.preventDefault();  
+});
+
+    $("#name3").keydown(()=>{  
+        $("#name3").css("background-color", "green");  
+    });
+   
+    $("#name3").keyup(()=>{  
+        $("#name3").css("background-color", "brown");  
+    });
+    
+    $("#name3").select(()=>{  
+        alert("Text Selected ");  
+    });
+   
+    $("#aura").hover(function(){
+    $(this).css("background-color", "yellow").append("<b>*****hover*******</b>");
+    }, function(){
+    $(this).css("background-color", "white").find("b:last").remove();
+  });
+
+  $("#name5").one('keypress select',()=>{
+  alert("keypress");
+
+  });
+    $("#button8").click(function(){
+         $(".p2").replaceWith("<h2>This is another heading</h2>");
+      });
+  
+  
+});
+
+</script>
+</head>
+<body>
+
+<label for="cars">Choose a car:</label>
+
+<select name="cars" id="cars">
+  <option value="">Select Car</option>
+  <option value="volvo">Volvo</option>
+  <option value="BMW">BMW</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+</select>
+<select name="bikes" id="bikes">
+  <option value="">Select Bike</option>
+  <option value="Royal Enfield TB">Royal Enfield TB</option>
+  <option value="TVS Apache">TVS Apache</option>
+  <option value="Yamaha r15">Yamaha r15</option>
+  <option value="Bajaj Pulsar">Bajaj Pulsar</option>
+</select>
+
+<input type="checkbox" toggle-data="toggle "id="check" checked/>
+
+<p class="p2">change, click, blur, prop, val , addClass, removeClass, attr,  is, text, html, on, copy, dblclick, keypress, append, prepend, empty,</p>
+
+<button id="button7">OFF ()</button>
+<button id="button8">relace with</button>
+
+
+<br><br><br><br><br><br><br><br><br><br>
+<input type="text" id="name"/><span>Enter Some Text</span>
+<br>
+<span class="span1">Enter Some Text</span><br><br>
+<textarea id="show" name="w3review" rows="4" cols="50"></textarea><br>
+<br>
+<button id="btn3">AddClass</button>
+<button id="btn4">hide</button>
+<br><br>
+<button id="btn1">1</button>
+<button id="btn2">2</button>
+<h3 id="app"></h3>
+
+<p id="aura">Type 'aura' to submit this form finally.</p>  
+<form action="javascript:alert( 'success!' );">  
+  <div>  
+    <input type="text" id="name3">  
+    <input type="submit">  
+  </div>  
+</form>  
+<h4 class="example"></h4>
+
+
+    <input type="text" id="name5">  
+</body>
+</html>

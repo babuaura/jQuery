@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>div{
+    background-color: blue;
+
+  }</style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$.noConflict();
+jQuery(()=>{
+	jQuery("h1").add("h6").css({"background":"black","color":"gold","width":"70px"});
+	jQuery("input[type='text']").css({"background":"lightblue"});
+    jQuery("input[type='password']").css({"background":"#E0BFB8"});
+    jQuery("input[type='button']").css({"background":"green"});
+    jQuery("table th").css({"background":"lightgreen"});
+    jQuery("table td:nth-child(odd)").css({"background":"pink"});
+    jQuery("table td:nth-child(even)").css({"background":"gold"});
+  
+  jQuery("p").on("click", function(){
+    jQuery(this).css("background-color", "pink");
+  });
+  jQuery("button").click(function(){
+    jQuery("p").off("click");
+  });
+  
+  jQuery("#button1").click(()=>{
+  jQuery("div#serialize").text("serialize() : "+jQuery( "form" ).serialize()).css("color","white");
+  jQuery("div#serializeArray").text("serializeArray() : "+JSON.stringify(jQuery( "form" ).serializeArray())).css("color","white");
+  });
+  
+   jQuery("#text").click(function(){
+         alert(jQuery("#p123").text());
+      });
+      jQuery("#html").click(function(){
+         alert(jQuery("#p123").html());
+      });
+      
+  jQuery("#attr").click(()=>{
+  alert(jQuery("a.abc").attr("value"));
+  jQuery("a.abc").attr("value","Orange");
+  alert(jQuery("a.abc").attr("value"));
+  });
+
+  jQuery(document).keypress(function(e){
+    jQuery("#keypress").html(e.which);
+  
+  });
+  jQuery( "#myDiv" ).data( "name", { Babu: "Babu" } );
+  alert(JSON.stringify(jQuery( "#myDiv" ).data( "name" )));
+  
+  jQuery("#wrap").click(()=>{
+    jQuery("#wrapP").wrap("<div></div>")
+  })
+  
+  jQuery("#unWrap").click(()=>{
+    jQuery("#wrapP").unwrap()
+  })
+  
+});
+</script>
+</head>
+<body>
+    <b>keypress</b><p id="keypress">keypress value</p>
+
+<div id="myDiv">
+
+</div>
+
+<p id="p123">The quick <b>brown fox</b> jumps over the <b>lazy dog</b></p>
+<button id="text">Get Text</button>
+   <button id="html">Get HTML</button><br><br>
+   
+   <a href="apple.com" value="apple" class="abc">apple</a>
+<button id="attr">Get attr</button>
+   
+
+<p>Click this paragraph to change its background color.</p>
+
+
+<button>Remove the click event handler</button><br><br><br>
+<p id="wrapP">Click the button below and then click on this paragraph (the click event is removed).</p>
+  <button id="wrap">Wrap</button><button id="unWrap">UnWrap</button><br><br><br>
+
+<h1>Ajax </h1><h6>Asynchronous JavaScript And XML</h6>
+
+<form>
+<input type="text" name="name"/>
+<input type="password" name="password"/>
+<input type="button" name="button" id="button1" value="submit"/>
+</form>
+<div id="serialize"></div><br>  
+<div id="serializeArray"></div><br>
+
+<table>
+<tr><th>Name</th><th>Place</th></tr>
+<tr><td>babu</td><td>Coimbatore</td></tr>
+<tr><td>Bala</td><td>Coimbatore</td></tr>
+<tr><td>Saravanan</td><td>Coimbatore</td></tr>
+<tr><td>Parbu</td><td>Coimbatore</td></tr>
+<tr><td>Anil</td><td>Mettupalayam</td></tr>
+</table>
+
+</body>
+</html>
